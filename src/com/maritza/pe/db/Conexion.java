@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 
 public class Conexion {
     private static Connection con = null;
-    private static String usuario = " trabajo";
+    private static String usuario = "TRABAJO";
     private static String contraseña = "1234560";
     private static String url = "jdbc:oracle:thin:@localhost:1521:xe";
     
@@ -21,9 +21,9 @@ public class Conexion {
         
         System.out.println("Maritza ........");
         if(con != null ){
-            System.out.println("Conexion exitosa :)");
+            System.out.println("Conexión exitosa :)");
         }else{
-            System.out.println("Error conexion fallida");
+            System.out.println("Error conexión fallida");
         }
         
     }catch(Exception e ){
