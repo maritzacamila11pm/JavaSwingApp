@@ -4,6 +4,8 @@
  */
 package com.maritza.pe.cpresentacion;
 
+import java.awt.BorderLayout;
+
 /**
  *
  * @author Alumno-PB203
@@ -32,10 +34,10 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
-        jPanel1 = new javax.swing.JPanel();
+        principal = new javax.swing.JPanel();
         jMenuBar3 = new javax.swing.JMenuBar();
         jMenu5 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        Menucalculadora = new javax.swing.JMenuItem();
         btnmenucontador = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
 
@@ -54,17 +56,17 @@ public class JFramePrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Aplicacion java swing");
 
-        jPanel1.setBackground(new java.awt.Color(102, 255, 204));
-        jPanel1.setForeground(new java.awt.Color(204, 255, 204));
+        principal.setBackground(new java.awt.Color(102, 255, 204));
+        principal.setForeground(new java.awt.Color(204, 255, 204));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout principalLayout = new javax.swing.GroupLayout(principal);
+        principal.setLayout(principalLayout);
+        principalLayout.setHorizontalGroup(
+            principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1200, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        principalLayout.setVerticalGroup(
+            principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 700, Short.MAX_VALUE)
         );
 
@@ -79,13 +81,13 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         jMenu5.setText("Aplicaciones");
 
-        jMenuItem1.setText("Calculadora");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        Menucalculadora.setText("Calculadora");
+        Menucalculadora.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                MenucalculadoraActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem1);
+        jMenu5.add(Menucalculadora);
 
         btnmenucontador.setText("Contador");
         btnmenucontador.addActionListener(new java.awt.event.ActionListener() {
@@ -107,21 +109,27 @@ public class JFramePrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(principal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(principal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    private void MenucalculadoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenucalculadoraActionPerformed
+       calculadora cal = new calculadora ();
+       cal.setSize(356, 562);
+       cal.setLocation(0,0);
+       principal.removeAll();
+       principal.add(cal,BorderLayout.CENTER);
+       principal.revalidate();
+       principal.repaint();
+    }//GEN-LAST:event_MenucalculadoraActionPerformed
 
     private void btnmenucontadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenucontadorActionPerformed
         // TODO add your handling code here:
@@ -163,6 +171,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Menucalculadora;
     private javax.swing.JMenuItem btnmenucontador;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -173,7 +182,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuBar jMenuBar3;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel principal;
     // End of variables declaration//GEN-END:variables
 }
