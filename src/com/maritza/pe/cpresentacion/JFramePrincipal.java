@@ -56,8 +56,9 @@ public class JFramePrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Aplicacion java swing");
 
-        principal.setBackground(new java.awt.Color(102, 255, 204));
-        principal.setForeground(new java.awt.Color(204, 255, 204));
+        principal.setBackground(new java.awt.Color(255, 255, 153));
+        principal.setForeground(new java.awt.Color(51, 255, 153));
+        principal.setPreferredSize(new java.awt.Dimension(1400, 663));
 
         javax.swing.GroupLayout principalLayout = new javax.swing.GroupLayout(principal);
         principal.setLayout(principalLayout);
@@ -67,7 +68,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         );
         principalLayout.setVerticalGroup(
             principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
+            .addGap(0, 663, Short.MAX_VALUE)
         );
 
         jMenuBar3.setBackground(new java.awt.Color(204, 255, 204));
@@ -76,9 +77,11 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jMenuBar3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jMenuBar3.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         jMenuBar3.setFocusTraversalPolicyProvider(true);
+        jMenuBar3.setFont(new java.awt.Font("Sitka Heading", 2, 18)); // NOI18N
         jMenuBar3.setInheritsPopupMenu(true);
         jMenuBar3.setOpaque(true);
 
+        jMenu5.setBackground(new java.awt.Color(102, 255, 102));
         jMenu5.setText("Aplicaciones");
 
         Menucalculadora.setText("Calculadora");
@@ -103,19 +106,22 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jMenuBar3.add(jMenu6);
 
         setJMenuBar(jMenuBar3);
+        jMenuBar3.getAccessibleContext().setAccessibleName("");
+        jMenuBar3.getAccessibleContext().setAccessibleDescription("");
         jMenuBar3.getAccessibleContext().setAccessibleParent(btnmenucontador);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(principal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(principal, javax.swing.GroupLayout.DEFAULT_SIZE, 1200, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(principal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(principal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -132,8 +138,13 @@ public class JFramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_MenucalculadoraActionPerformed
 
     private void btnmenucontadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenucontadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnmenucontadorActionPerformed
+ contador cal = new contador ();
+       cal.setSize(356, 562);
+       cal.setLocation(0,0);
+       principal.removeAll();
+       principal.add(cal,BorderLayout.CENTER);
+       principal.revalidate();
+       principal.repaint();    }//GEN-LAST:event_btnmenucontadorActionPerformed
 
     /**
      * @param args the command line arguments

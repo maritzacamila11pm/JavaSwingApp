@@ -37,10 +37,20 @@ public
             
     }
     
-    public void numoperacion(String sentencia,String Simbolo){
+    public void numoperacion(String sentencia,String Simbolo ){
+    String[] cortar = sentencia.split("");
     String[] numero = sentencia.split(Simbolo);
-    float primerNumero = Float.parseFloat(numero[0]);
-    float segundoNumero = Float.parseFloat(numero[1]);
+    float primerNumero=0;
+    float segundoNumero=0;
+    if (numero [0].contains(Simbolo)){
+         primerNumero = Float.parseFloat(numero[1]);
+         segundoNumero = Float.parseFloat(numero[2]);
+        }else{            
+         primerNumero = Float.parseFloat(numero[0]);
+         segundoNumero = Float.parseFloat(numero[1]);
+}
+    //float primerNumero = Float.parseFloat(numero[0]);
+    //float segundoNumero = Float.parseFloat(numero[1]);
     float resultado = 0;
     if(Simbolo.equals("\\+")){
     resultado= primerNumero + segundoNumero;
@@ -81,16 +91,18 @@ public
         btn3 = new javax.swing.JButton();
         btn1 = new javax.swing.JButton();
 
-        panel.setBackground(new java.awt.Color(255, 255, 204));
+        panel.setBackground(new java.awt.Color(51, 255, 153));
         panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Sitka Heading", 1, 18)); // NOI18N
         jLabel1.setText("CALCULADORA");
         panel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 16, -1, -1));
 
+        resultado.setBackground(new java.awt.Color(102, 255, 204));
         resultado.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         resultado.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         resultado.setText("0");
+        resultado.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         resultado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 resultadoActionPerformed(evt);
@@ -98,26 +110,32 @@ public
         });
         panel.add(resultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 320, 79));
 
+        btnc.setBackground(new java.awt.Color(102, 255, 204));
         btnc.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnc.setText("C");
+        btnc.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btncActionPerformed(evt);
             }
         });
-        panel.add(btnc, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 70, 60));
+        panel.add(btnc, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 70, 60));
 
+        btnborra.setBackground(new java.awt.Color(102, 255, 204));
         btnborra.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnborra.setText(">X");
+        btnborra.setText("<X");
+        btnborra.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnborra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnborraActionPerformed(evt);
             }
         });
-        panel.add(btnborra, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 70, 60));
+        panel.add(btnborra, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 70, 60));
 
+        btndivision.setBackground(new java.awt.Color(102, 255, 204));
         btndivision.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btndivision.setText("/");
+        btndivision.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btndivision.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btndivisionActionPerformed(evt);
@@ -125,17 +143,21 @@ public
         });
         panel.add(btndivision, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 70, 60));
 
+        btnce.setBackground(new java.awt.Color(102, 255, 204));
         btnce.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnce.setText("CE");
+        btnce.setText("%");
+        btnce.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnce.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnceActionPerformed(evt);
             }
         });
-        panel.add(btnce, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 70, 60));
+        panel.add(btnce, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 70, 60));
 
+        btn9.setBackground(new java.awt.Color(204, 255, 204));
         btn9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn9.setText("9");
+        btn9.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn9ActionPerformed(evt);
@@ -143,8 +165,10 @@ public
         });
         panel.add(btn9, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 70, 60));
 
+        btnmulti.setBackground(new java.awt.Color(102, 255, 204));
         btnmulti.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnmulti.setText("X");
+        btnmulti.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnmulti.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnmultiActionPerformed(evt);
@@ -152,8 +176,10 @@ public
         });
         panel.add(btnmulti, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, 70, 60));
 
+        btn7.setBackground(new java.awt.Color(204, 255, 204));
         btn7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn7.setText("7");
+        btn7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn7ActionPerformed(evt);
@@ -161,8 +187,10 @@ public
         });
         panel.add(btn7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 70, 58));
 
+        btnigual.setBackground(new java.awt.Color(102, 255, 204));
         btnigual.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnigual.setText("=");
+        btnigual.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnigual.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnigualActionPerformed(evt);
@@ -170,8 +198,10 @@ public
         });
         panel.add(btnigual, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 480, 70, 58));
 
+        btn8.setBackground(new java.awt.Color(204, 255, 204));
         btn8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn8.setText("8");
+        btn8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn8ActionPerformed(evt);
@@ -179,8 +209,10 @@ public
         });
         panel.add(btn8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 70, 58));
 
+        btn2.setBackground(new java.awt.Color(204, 255, 204));
         btn2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn2.setText("2");
+        btn2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn2ActionPerformed(evt);
@@ -188,8 +220,10 @@ public
         });
         panel.add(btn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, 70, 58));
 
+        btnpunto.setBackground(new java.awt.Color(204, 255, 204));
         btnpunto.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         btnpunto.setText(".");
+        btnpunto.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnpunto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnpuntoActionPerformed(evt);
@@ -197,8 +231,10 @@ public
         });
         panel.add(btnpunto, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 480, 70, 58));
 
+        btnresta.setBackground(new java.awt.Color(102, 255, 204));
         btnresta.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnresta.setText("-");
+        btnresta.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnresta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnrestaActionPerformed(evt);
@@ -206,8 +242,10 @@ public
         });
         panel.add(btnresta, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 340, 70, 58));
 
+        btnsuma.setBackground(new java.awt.Color(102, 255, 204));
         btnsuma.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnsuma.setText("+");
+        btnsuma.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnsuma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnsumaActionPerformed(evt);
@@ -215,8 +253,10 @@ public
         });
         panel.add(btnsuma, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 410, 70, 58));
 
+        btn4.setBackground(new java.awt.Color(204, 255, 204));
         btn4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn4.setText("4");
+        btn4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn4ActionPerformed(evt);
@@ -224,8 +264,10 @@ public
         });
         panel.add(btn4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 340, 70, 58));
 
+        btn5.setBackground(new java.awt.Color(204, 255, 204));
         btn5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn5.setText("5");
+        btn5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn5ActionPerformed(evt);
@@ -233,8 +275,10 @@ public
         });
         panel.add(btn5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 70, 58));
 
+        btn6.setBackground(new java.awt.Color(204, 255, 204));
         btn6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn6.setText("6");
+        btn6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn6ActionPerformed(evt);
@@ -242,8 +286,10 @@ public
         });
         panel.add(btn6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 70, 58));
 
+        sumaresta.setBackground(new java.awt.Color(204, 255, 204));
         sumaresta.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        sumaresta.setText("+-");
+        sumaresta.setText("√ ");
+        sumaresta.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         sumaresta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sumarestaActionPerformed(evt);
@@ -251,8 +297,10 @@ public
         });
         panel.add(sumaresta, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, 70, 58));
 
+        btn0.setBackground(new java.awt.Color(204, 255, 204));
         btn0.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn0.setText("0");
+        btn0.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn0ActionPerformed(evt);
@@ -260,8 +308,10 @@ public
         });
         panel.add(btn0, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 480, 70, 58));
 
+        btn3.setBackground(new java.awt.Color(204, 255, 204));
         btn3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn3.setText("3");
+        btn3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn3ActionPerformed(evt);
@@ -269,8 +319,10 @@ public
         });
         panel.add(btn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, 70, 58));
 
+        btn1.setBackground(new java.awt.Color(204, 255, 204));
         btn1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn1.setText("1");
+        btn1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn1ActionPerformed(evt);
@@ -284,15 +336,14 @@ public
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(panel, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panel, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panel, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(panel, javax.swing.GroupLayout.PREFERRED_SIZE, 556, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 6, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -304,11 +355,13 @@ public
     }//GEN-LAST:event_btncActionPerformed
 
     private void btnborraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnborraActionPerformed
- resultado.setText(""); 
+    int tamanio = this.resultado.getText().length();
+    this.resultado.setText(this.resultado.getText().substring(0,tamanio -1 ));
     }//GEN-LAST:event_btnborraActionPerformed
 
     private void btndivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndivisionActionPerformed
-resultado.setText(resultado.getText()+"/");
+    this.operacion(this.resultado.getText());
+    resultado.setText(resultado.getText()+"/");
     }//GEN-LAST:event_btndivisionActionPerformed
 
     private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
@@ -316,7 +369,8 @@ resultado.setText(resultado.getText()+"9");
     }//GEN-LAST:event_btn9ActionPerformed
 
     private void btnmultiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmultiActionPerformed
-resultado.setText(resultado.getText()+"x");
+    this.operacion(this.resultado.getText());
+ resultado.setText(resultado.getText()+"x");
     }//GEN-LAST:event_btnmultiActionPerformed
 
     private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
@@ -341,11 +395,13 @@ resultado.setText(resultado.getText()+".");
     }//GEN-LAST:event_btnpuntoActionPerformed
 
     private void btnrestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrestaActionPerformed
-resultado.setText(resultado.getText()+"-");
+    this.operacion(this.resultado.getText());
+    resultado.setText(resultado.getText()+"-");
     }//GEN-LAST:event_btnrestaActionPerformed
 
     private void btnsumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsumaActionPerformed
-resultado.setText(resultado.getText()+"+");
+    this.operacion(this.resultado.getText());
+    resultado.setText(resultado.getText()+"+");
     }//GEN-LAST:event_btnsumaActionPerformed
 
     private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
@@ -369,7 +425,7 @@ resultado.setText(resultado.getText()+"0");
     }//GEN-LAST:event_btn0ActionPerformed
 
     private void btnceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnceActionPerformed
- resultado.setText(""); 
+ resultado.setText(" / 100"); 
     }//GEN-LAST:event_btnceActionPerformed
 
     private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
