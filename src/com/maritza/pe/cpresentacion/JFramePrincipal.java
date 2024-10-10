@@ -35,11 +35,11 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         principal = new javax.swing.JPanel();
-        jMenuBar3 = new javax.swing.JMenuBar();
-        jMenu5 = new javax.swing.JMenu();
-        Menucalculadora = new javax.swing.JMenuItem();
-        btnmenucontador = new javax.swing.JMenuItem();
-        jMenu6 = new javax.swing.JMenu();
+        jMenuBar4 = new javax.swing.JMenuBar();
+        jMenu7 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu8 = new javax.swing.JMenu();
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -68,47 +68,33 @@ public class JFramePrincipal extends javax.swing.JFrame {
         );
         principalLayout.setVerticalGroup(
             principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 685, Short.MAX_VALUE)
+            .addGap(0, 744, Short.MAX_VALUE)
         );
 
-        jMenuBar3.setBackground(new java.awt.Color(204, 255, 204));
-        jMenuBar3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jMenuBar3.setForeground(new java.awt.Color(51, 51, 51));
-        jMenuBar3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jMenuBar3.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        jMenuBar3.setFocusTraversalPolicyProvider(true);
-        jMenuBar3.setFont(new java.awt.Font("Sitka Heading", 2, 18)); // NOI18N
-        jMenuBar3.setInheritsPopupMenu(true);
-        jMenuBar3.setOpaque(true);
+        jMenu7.setText("Aplicaciones");
 
-        jMenu5.setBackground(new java.awt.Color(102, 255, 102));
-        jMenu5.setText("Aplicaciones");
-
-        Menucalculadora.setText("Calculadora");
-        Menucalculadora.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem1.setText("Calculadora");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenucalculadoraActionPerformed(evt);
+                jMenuItem1ActionPerformed(evt);
             }
         });
-        jMenu5.add(Menucalculadora);
+        jMenu7.add(jMenuItem1);
 
-        btnmenucontador.setText("Contador");
-        btnmenucontador.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem2.setText("Contador");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnmenucontadorActionPerformed(evt);
+                jMenuItem2ActionPerformed(evt);
             }
         });
-        jMenu5.add(btnmenucontador);
+        jMenu7.add(jMenuItem2);
 
-        jMenuBar3.add(jMenu5);
+        jMenuBar4.add(jMenu7);
 
-        jMenu6.setText("Edit");
-        jMenuBar3.add(jMenu6);
+        jMenu8.setText("Edit");
+        jMenuBar4.add(jMenu8);
 
-        setJMenuBar(jMenuBar3);
-        jMenuBar3.getAccessibleContext().setAccessibleName("");
-        jMenuBar3.getAccessibleContext().setAccessibleDescription("");
-        jMenuBar3.getAccessibleContext().setAccessibleParent(btnmenucontador);
+        setJMenuBar(jMenuBar4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -119,32 +105,30 @@ public class JFramePrincipal extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(principal, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(principal, javax.swing.GroupLayout.DEFAULT_SIZE, 744, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void MenucalculadoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenucalculadoraActionPerformed
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
        calculadora cal = new calculadora ();
        cal.setSize(356, 562);
        cal.setLocation(0,0);
        principal.removeAll();
        principal.add(cal,BorderLayout.CENTER);
        principal.revalidate();
-       principal.repaint();
-    }//GEN-LAST:event_MenucalculadoraActionPerformed
+       principal.repaint();    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void btnmenucontadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenucontadorActionPerformed
- contador cal = new contador ();
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+       contador cal = new contador ();
        cal.setSize(356, 562);
        cal.setLocation(0,0);
        principal.removeAll();
        principal.add(cal,BorderLayout.CENTER);
        principal.revalidate();
-       principal.repaint();    }//GEN-LAST:event_btnmenucontadorActionPerformed
+       principal.repaint();      }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,17 +166,17 @@ public class JFramePrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem Menucalculadora;
-    private javax.swing.JMenuItem btnmenucontador;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
-    private javax.swing.JMenuBar jMenuBar3;
+    private javax.swing.JMenuBar jMenuBar4;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel principal;
     // End of variables declaration//GEN-END:variables
 }
