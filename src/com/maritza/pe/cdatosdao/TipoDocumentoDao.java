@@ -1,8 +1,10 @@
 
 package com.maritza.pe.cdatosdao;
 import com.maritza.pe.cmodelo.TipoDocumento;
+import java.beans.Statement;
 import java.sql.Connection;
  import java.sql.PreparedStatement;
+import javax.swing.JTable;
 
 public class TipoDocumentoDao {
     private String mensaje;
@@ -78,5 +80,22 @@ return  mensaje;
         }
         return mensaje;
     }
+    public void listarTipoDocumento(Connection conn,JTable )
+
+      DefaulTableModel model;
+
+      Statement statement = null ;
+
+      ResulSet resulset = null;
+
+     String[] columnas = ["ID","NOMBRE", "SIGLA" ,"ESTADO" ,"NACIONALIDAD","FECHA"]
+
+
+
+
+
+
+
+}
 }
 

@@ -4,9 +4,12 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/maritza/java.swing/JavaSwingApp/src/com/maritza/pe/ctest/Test.java</file>
+            <file>file:/C:/maritza/java.swing/JavaSwingApp/src/com/maritza/pe/cpresentacion/JPtipoDocumento.java</file>
             <file>file:/C:/maritza/java.swing/JavaSwingApp/src/com/maritza/pe/cdatosdao/TipoDocumentoDao.java</file>
             <file>file:/C:/maritza/java.swing/JavaSwingApp/src/com/maritza/pe/cnegocio/TipoDocumentoBo.java</file>
             <file>file:/C:/maritza/java.swing/JavaSwingApp/src/com/maritza/pe/cmodelo/TipoDocumento.java</file>
+            <file>file:/C:/maritza/java.swing/JavaSwingApp/src/com/maritza/pe/cpresentacion/contador.java</file>
+            <file>file:/C:/maritza/java.swing/JavaSwingApp/src/com/maritza/pe/cpresentacion/JFramePrincipal.java</file>
         </group>
     </open-files>
 </project-private>
