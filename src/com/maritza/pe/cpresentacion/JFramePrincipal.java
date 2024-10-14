@@ -45,6 +45,11 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenu9 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu8 = new javax.swing.JMenu();
+
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -77,7 +82,8 @@ public class JFramePrincipal extends javax.swing.JFrame {
         );
 
         jMenu8.setText("APLICACIONES");
-
+            .addGap(0, 744, Short.MAX_VALUE)
+        );
         jMenuItem1.setText("Calculadora");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,6 +91,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
             }
         });
         jMenu8.add(jMenuItem1);
+
 
         jMenuItem2.setText("Contador");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -120,6 +127,13 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jMenu9.setText("WINDOW");
         jMenuBar4.add(jMenu9);
 
+        jMenu7.add(jMenuItem2);
+
+        jMenuBar4.add(jMenu7);
+
+        jMenu8.setText("Edit");
+        jMenuBar4.add(jMenu8);
+
         setJMenuBar(jMenuBar4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -131,6 +145,10 @@ public class JFramePrincipal extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(principal, javax.swing.GroupLayout.DEFAULT_SIZE, 649, Short.MAX_VALUE)
+
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(principal, javax.swing.GroupLayout.DEFAULT_SIZE, 744, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -143,10 +161,11 @@ public class JFramePrincipal extends javax.swing.JFrame {
        principal.removeAll();
        principal.add(cal,BorderLayout.CENTER);
        principal.revalidate();
-       principal.repaint();      }//GEN-LAST:event_jMenuItem1ActionPerformed
+       principal.repaint();    
+         }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-contador cal = new contador ();
+       contador cal = new contador ();
        cal.setSize(356, 562);
        cal.setLocation(0,0);
        principal.removeAll();
@@ -199,6 +218,7 @@ contador cal = new contador ();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+
     private javax.swing.JMenuItem btnmenutipodocumento;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu11;
@@ -206,13 +226,19 @@ contador cal = new contador ();
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
+
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenu jMenu9;
+
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
+
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuBar jMenuBar4;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JPanel principal;
